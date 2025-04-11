@@ -22,7 +22,7 @@ if not os.path.exists(CAMINHO_USUARIOS):
         "Exportacoes": True,
         "Admin": True
     }])
-    df_usuarios.to_csv(CAMINHO_USUARIOS, index=False)
+    df_usuarios.to_csv("usuarios.csv", index=False)
 
 
 if "logado" not in st.session_state:
@@ -438,7 +438,7 @@ if st.session_state["logado"]:
                 with col2:
                     if st.button(f"Excluir", key=f"excluir_{i}"):
                         df_usuarios = df_usuarios[df_usuarios["Usuario"] != row["Usuario"]]
-                        df_usuarios.to_csv(CAMINHO_USUARIOS, index=False)
+                        df_usuarios.to_csv("usuarios.csv", index=False)
                         st.success(f"Usuário '{row['Usuario']}' excluído com sucesso.")
                         st.stop()
 
@@ -470,7 +470,7 @@ if st.session_state["logado"]:
                         "Admin": acesso_admin
                     }])
                     df_usuarios = pd.concat([df_usuarios, novo], ignore_index=True)
-                    df_usuarios.to_csv(CAMINHO_USUARIOS, index=False)
+                    df_usuarios.to_csv("usuarios.csv", index=False)
                     st.success("Usuário salvo com sucesso.")
 
 
