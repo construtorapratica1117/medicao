@@ -1,0 +1,3 @@
+Usuario,Senha,Cadastro,Medicao,Relatorio,Historico,Exportacoes,Admin
+Yuri,240992,True,True,True,True,True,True
+teste1,123,False,True,True,True,True,False
